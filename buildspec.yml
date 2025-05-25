@@ -22,14 +22,13 @@ phases:
       - echo "Validating SAM template"
       - sam validate --template-file template.yaml
       - echo "Packaging SAM template"
-      - sam package --debug \
-          --template-file template.yaml \
-          --output-template-file packaged.yaml \
-          --s3-bucket $ARTIFACT_BUCKET \
-          --region $REGION
+      - sam package \
+        --template-file template.yaml \
+        --output-template-file packaged.yaml \
+        -- s3-bucket cloudx-pipeline-artifacts-bucket2
       - echo "Listing contents after sam package:"
       - ls -la
 
 artifacts:
   files:
-    - packaged.yaml
+    - '**/*'
