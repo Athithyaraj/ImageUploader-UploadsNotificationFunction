@@ -31,6 +31,4 @@ phases:
 
 artifacts:
   files:
-    - packaged.yaml   # Ensure packaged.yaml is explicitly listed
-    - '**/*'          # Include all files, if needed
-    - '!**/.aws-sam/**/*'   # Exclude the .aws-sam folder if not needed
+     - '**/*'          # Include all files, if needed
