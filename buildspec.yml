@@ -8,12 +8,17 @@ env:
 phases:
   install:
     runtime-versions:
-      python: 3.11
+      dotnet: 8.0
     commands:
+      - echo "Installing AWS SAM CLI"
       - pip install aws-sam-cli
   build:
     commands:
+      - echo "Restoring .NET dependencies"
+      - dotnet restore
+      - echo "Building project"
       - sam build
+      - echo "Packaging SAM template"
       - sam package \
           --template-file template.yaml \
           --output-template-file packaged.yaml \
