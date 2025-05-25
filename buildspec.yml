@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    ARTIFACT_BUCKET: "cloudx-pipeline-artifacts-bucket"
+    ARTIFACT_BUCKET: "cloudx-pipeline-artifacts-bucket2"
     REGION: "ap-south-1"
 
 phases:
