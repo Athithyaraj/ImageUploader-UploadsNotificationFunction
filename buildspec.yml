@@ -12,7 +12,11 @@ phases:
     commands:
       - echo "Installing AWS SAM CLI"
       - pip install aws-sam-cli
-
+  pre_build:
+   commands:
+    - echo "Listing the environment variables and files"
+    - printenv
+    - ls -la
   build:
     commands:
       - echo "Restoring .NET dependencies"
